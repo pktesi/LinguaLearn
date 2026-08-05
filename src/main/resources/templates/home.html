@@ -12,59 +12,70 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="/">LinguaLearn</a>
-
-        <div class="navbar-nav">
-            <a class="nav-link active" href="/">Home</a>
-            <a class="nav-link" href="/about">About</a>
-            <a class="nav-link" href="/languages">Languages</a>
-            <a class="nav-link" href="/courses">Courses</a>
-        </div>
-    </div>
-</nav>
+<!-- Navigation Bar -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
 
 <main class="container py-5">
+
     <div class="p-5 bg-light rounded-3">
-        <h1 class="display-4">Learn a new language with LinguaLearn</h1>
+
+        <h1 class="display-4">
+            Learn a new language with LinguaLearn
+        </h1>
 
         <p class="lead">
             Explore language courses, improve your communication skills,
             and learn at your own pace.
         </p>
 
-        <a href="/courses" class="btn btn-primary btn-lg">
+        <a th:href="@{/courses}" class="btn btn-primary btn-lg">
             Explore Courses
         </a>
+
     </div>
 
     <section class="row mt-5">
+
         <div class="col-md-4">
+
             <h2>Multiple Languages</h2>
+
             <p>
-                Study languages such as French, Spanish, Japanese,
-                Arabic, German, Italian, Swahili, and Mandarin.
+                Study French, English, Spanish, Japanese,
+                German, Italian, Arabic, Mandarin,
+                Swahili and many more.
             </p>
+
         </div>
 
         <div class="col-md-4">
+
             <h2>Qualified Instructors</h2>
+
             <p>
-                Learn through structured courses created by experienced
-                language instructors.
+                Learn from experienced instructors through
+                interactive lessons designed for every skill level.
             </p>
+
         </div>
 
         <div class="col-md-4">
+
             <h2>Flexible Learning</h2>
+
             <p>
-                Browse courses by language and difficulty and choose the
-                learning path that fits your goals.
+                Browse courses by language and difficulty,
+                track your progress and learn whenever
+                it fits your schedule.
             </p>
+
         </div>
+
     </section>
+
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course - LinguaLearn</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h3>Edit Course</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form th:action="@{/admin/courses/edit/{id}(id=${course.id})}"
+                  th:object="${course}"
+                  method="post">
+
+                <div class="mb-3">
+                    <label class="form-label">Course Title</label>
+                    <input type="text"
+                           class="form-control"
+                           th:field="*{title}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control"
+                              rows="4"
+                              th:field="*{description}"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Language</label>
+                    <input type="text"
+                           class="form-control"
+                           th:field="*{language}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Difficulty</label>
+                    <input type="text"
+                           class="form-control"
+                           th:field="*{difficulty}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Instructor Name</label>
+                    <input type="text"
+                           class="form-control"
+                           th:field="*{instructorName}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Duration (Weeks)</label>
+                    <input type="number"
+                           class="form-control"
+                           th:field="*{durationWeeks}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="number"
+                           step="0.01"
+                           class="form-control"
+                           th:field="*{price}">
+                </div>
+
+                <div class="d-flex justify-content-between">
+
+                    <a th:href="@{/admin/courses}"
+                       class="btn btn-secondary">
+                        Cancel
+                    </a>
+
+                    <button type="submit"
+                            class="btn btn-success">
+                        Save Changes
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
